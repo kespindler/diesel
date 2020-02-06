@@ -32,7 +32,7 @@ num-integer = { version = "0.1.32", optional = true }
 bigdecimal = { version = ">= 0.0.10, <= 0.1.0", optional = true }
 bitflags = { version = "1.0", optional = true }
 r2d2 = { version = ">= 0.8, < 0.9", optional = true }
-rust-postgres = { version = ">=0.17,<0.18", optional = true, package = "postgres" }
+rust_postgres = { version = ">=0.17,<0.18", optional = true, package = "postgres" }
 
 [dev-dependencies]
 cfg-if = "0.1.0"
@@ -53,7 +53,7 @@ x64-column-tables = ["64-column-tables"]
 x128-column-tables = ["128-column-tables"]
 128-column-tables = ["64-column-tables"]
 postgres = ["pq-sys", "bitflags", "diesel_derives/postgres"]
-rust-postgres = ["rust-postgres", "bitflags", "diesel_derives/postgres"]
+rust-postgres = ["rust_postgres", "bitflags", "diesel_derives/postgres"]
 sqlite = ["libsqlite3-sys", "diesel_derives/sqlite"]
 mysql = ["mysqlclient-sys", "url", "diesel_derives/mysql"]
 with-deprecated = []
