@@ -355,7 +355,7 @@ pub struct Timestamp;
 #[derive(Debug, Clone, Copy, Default)]
 pub struct Nullable<ST: NotNull>(ST);
 
-#[cfg(feature = "postgres")]
+#[cfg(any(feature = "postgres", feature = "rust-postgres"))]
 pub use pg::types::sql_types::*;
 
 #[cfg(feature = "mysql")]

@@ -100,7 +100,7 @@ fn pg_tokens(item: &syn::DeriveInput) -> Option<proc_macro2::TokenStream> {
         })
         .and_then(|res| res.map_err(|e| e.emit()).ok())
         .and_then(|ty| {
-            if cfg!(not(feature = "postgres")) {
+            if cfg!(not(any(feature = "postgres", feature="rust-postgres"))) {
                 return None;
             }
 

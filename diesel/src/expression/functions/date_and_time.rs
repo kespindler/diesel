@@ -56,7 +56,7 @@ impl AsExpression<Nullable<Timestamp>> for now {
     }
 }
 
-#[cfg(feature = "postgres")]
+#[cfg(any(feature = "postgres", feature="rust-postgres")]
 impl AsExpression<Timestamptz> for now {
     type Expression = Coerce<now, Timestamptz>;
 
@@ -65,7 +65,7 @@ impl AsExpression<Timestamptz> for now {
     }
 }
 
-#[cfg(feature = "postgres")]
+#[cfg(any(feature = "postgres", feature="rust-postgres")]
 impl AsExpression<Nullable<Timestamptz>> for now {
     type Expression = Coerce<now, Nullable<Timestamptz>>;
 
